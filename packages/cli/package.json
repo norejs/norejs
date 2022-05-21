@@ -1,0 +1,39 @@
+{
+    "name": "@norejs/cli",
+    "version": "1.0.0",
+    "description": "rollup cli",
+    "author": "pengzai <roc.liu@hotmail.com>",
+    "homepage": "",
+    "license": "ISC",
+    "main": "lib/cli.js",
+    "directories": {
+        "lib": "lib",
+        "test": "__tests__"
+    },
+    "scripts": {
+        "test": "echo \"Error: run tests from root\" && exit 1"
+    },
+    "bin": {
+        "nore": "./bin/nore.js",
+        "norejs": "./bin/nore.js"
+    },
+    "dependencies": {
+        "@babel/core": "^7.16.0",
+        "@babel/preset-env": "^7.16.5",
+        "@babel/register": "^7.16.0",
+        "@rollup/plugin-babel": "^5.3.0",
+        "@rollup/plugin-commonjs": "^21.0.1",
+        "@rollup/plugin-node-resolve": "^13.0.6",
+        "colorful": "^2.1.0",
+        "commander": "^8.3.0",
+        "fs-extra": "^10.0.0",
+        "jsdoc": "^3.6.7",
+        "rollup": "^2.59.0",
+        "rollup-plugin-filesize": "^9.1.1",
+        "rollup-plugin-terser": "^7.0.2"
+    },
+    "devDependencies": {
+        "chalk": "^4.1.2",
+        "yalc": "^1.0.0-pre.53"
+    }
+}

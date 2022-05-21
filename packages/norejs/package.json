@@ -1,32 +1,32 @@
 {
-  "name": "norejs",
-  "version": "0.0.1-alpha.1",
-  "description": "norejs -  a set of JS utils,react-components often used in work",
-  "keywords": [
-    "norejs",
-    "js",
-    "utils",
-    "react"
-  ],
-  "author": "pengzai <roc.liu@hotmail.com>",
-  "homepage": "https://github.com/norejs/norejs#readme",
-  "license": "ISC",
-  "main": "lib/norejs.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/norejs/norejs.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
-  "bugs": {
-    "url": "https://github.com/norejs/norejs/issues"
-  }
+    "name": "@norejs/norejs",
+    "version": "1.0.0",
+    "description": "> TODO: description",
+    "author": "pengzai <roc.liu@hotmail.com>",
+    "homepage": "https://github.com/norejs/norejs#readme",
+    "license": "ISC",
+    "main": "dist/index.js",
+    "directories": {
+        "lib": "lib",
+        "test": "__tests__"
+    },
+    "files": [
+        "dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/norejs/norejs.git"
+    },
+    "scripts": {
+        "test": "echo \"Error: run tests from root\" && exit 1",
+        "build": "norejs build",
+        "start": "norejs start"
+    },
+    "bugs": {
+        "url": "https://github.com/norejs/norejs/issues"
+    },
+    "module": "dist/esm/index.js",
+    "dependencies": {
+        "@norejs/cli": "^1.0.0"
+    }
 }
