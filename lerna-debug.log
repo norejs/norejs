@@ -1,15 +1,14 @@
-0 silly argv {
-0 silly argv   _: [ 'create' ],
-0 silly argv   lernaVersion: '4.0.0',
-0 silly argv   '$0': '/Users/pengzai/.yarn/bin/lerna',
-0 silly argv   name: '@norejs/norejs'
-0 silly argv }
-1 notice cli v4.0.0
-2 verbose rootPath /Users/pengzai/www/github/norejs
-3 info versioning independent
-4 error Error: Command failed with exit code 1: git config --get user.name
-4 error     at makeError (/Users/pengzai/.config/yarn/global/node_modules/@lerna/child-process/node_modules/execa/lib/error.js:60:11)
-4 error     at Function.module.exports.sync (/Users/pengzai/.config/yarn/global/node_modules/@lerna/child-process/node_modules/execa/index.js:194:17)
-4 error     at Object.execSync (/Users/pengzai/.config/yarn/global/node_modules/@lerna/child-process/index.js:39:16)
-4 error     at CreateCommand.gitConfig (/Users/pengzai/.config/yarn/global/node_modules/@lerna/create/index.js:181:25)
-4 error     at CreateCommand.initialize (/Users/pengzai/.config/yarn/global/node_modules/@lerna/create/index.js:103:46)
+16 error Error: Command failed with exit code 1: git remote update
+16 error Connection closed by 198.18.1.217 port 22
+16 error fatal: Could not read from remote repository.
+16 error
+16 error Please make sure you have the correct access rights
+16 error and the repository exists.
+16 error error: Could not fetch origin
+16 error Fetching origin
+16 error     at makeError (/Users/pengzai/.config/yarn/global/node_modules/@lerna/child-process/node_modules/execa/lib/error.js:60:11)
+16 error     at Function.module.exports.sync (/Users/pengzai/.config/yarn/global/node_modules/@lerna/child-process/node_modules/execa/index.js:194:17)
+16 error     at Object.execSync (/Users/pengzai/.config/yarn/global/node_modules/@lerna/child-process/index.js:39:16)
+16 error     at updateRemote (/Users/pengzai/.config/yarn/global/node_modules/@lerna/version/lib/is-behind-upstream.js:34:16)
+16 error     at isBehindUpstream (/Users/pengzai/.config/yarn/global/node_modules/@lerna/version/lib/is-behind-upstream.js:16:3)
+16 error     at VersionCommand.initialize (/Users/pengzai/.config/yarn/global/node_modules/@lerna/version/index.js:153:9)
