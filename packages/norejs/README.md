@@ -1,11 +1,15 @@
-# `@norejs/norejs`
+# NoreJs
+## runSh
 
-> TODO: description
+``` javascript
+import { runSh } from 'norejs';
 
-## Usage
-
-```
-const norejs = require('@norejs/norejs');
-
-// TODO: DEMONSTRATE API
+// 运行 node -v 命令
+runSh('node -v',{
+    // 是否直接打印
+    print:false
+},(code,data)=>{
+    // 回调函数
+    console.log(code,data);
+});
 ```
