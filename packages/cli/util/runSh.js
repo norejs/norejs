@@ -1,11 +1,9 @@
-const { exec } = require("child_process");
+const { spawn } = require('child_process');
+// 运行command 并且 在控制台输出
 function runSh(execStr, options = {}, callback = () => {}) {
-    exec(execStr, options, (error, stdout, stderr) => {
-        if (error !== null) {
-            console.error(`exec error: ${error}`);
-        }
-        callback(error, stdout, stderr);
-    });
+    const args = execStr.split(' ');
+    const command = args.shift();
+    spawn(command, args, options);
+    
 }
-
 module.exports = runSh;

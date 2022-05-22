@@ -1,6 +1,6 @@
 {
     "name": "norejs",
-    "version": "1.0.1-alpha.0",
+    "version": "1.0.1-alpha.1",
     "description": "> TODO: description",
     "author": "pengzai <roc.liu@hotmail.com>",
     "homepage": "https://github.com/norejs/norejs#readme",
@@ -20,7 +20,8 @@
     "scripts": {
         "test": "echo \"Error: run tests from root\" && exit 1",
         "build": "norejs build",
-        "start": "norejs start"
+        "start": "norejs start",
+        "prepublish": "rm -rf dist && npm run build"
     },
     "bugs": {
         "url": "https://github.com/norejs/norejs/issues"

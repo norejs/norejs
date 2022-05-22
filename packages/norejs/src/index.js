@@ -1,4 +1,2 @@
 // 入口文件
-export function main() {
-    // TODO
-}
+export { default as runSh } from './modules/runSh';
