@@ -6,7 +6,7 @@ const { spawn } = require('child_process');
  * @param options.print {Boolean} 是否打印
  * @param callback {(code,data)=>{}} 回调函数
  *  */
-const noop = () => {};
+const noop = (...props: any[]): void => {};
 export default function runSh(execStr, options = {}, callback = noop) {
     const hasCallback = callback !== noop;
     const defaultOptions = { print: true };
