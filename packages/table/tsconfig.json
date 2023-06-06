@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "es5",
+            "es6",
+            "esnext"
+        ],
+        "allowJs": true,
+        "module": "commonjs",
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "jsx": "react",
+        "declaration": true,
+        "declarationDir": "dist",
+        "incremental": true
+    }
+}

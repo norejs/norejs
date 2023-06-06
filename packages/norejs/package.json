@@ -1,5 +1,5 @@
 {
-    "name": "norejs",
+    "name": "@norejs/norejs",
     "version": "1.0.1-alpha.2",
     "description": "> TODO: description",
     "author": "nore <norejs@outlook.com>",
@@ -19,8 +19,6 @@
     },
     "scripts": {
         "test": "echo \"Error: run tests from root\" && exit 1",
-        "build": "norejs build",
-        "start": "norejs start",
         "prepublish": "rm -rf dist && npm run build"
     },
     "bugs": {
