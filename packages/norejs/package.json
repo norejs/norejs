@@ -2,7 +2,7 @@
     "name": "norejs",
     "version": "1.0.1-alpha.2",
     "description": "> TODO: description",
-    "author": "pengzai <roc.liu@hotmail.com>",
+    "author": "nore <norejs@outlook.com>",
     "homepage": "https://github.com/norejs/norejs#readme",
     "license": "ISC",
     "main": "dist/index.js",
