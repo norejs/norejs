@@ -55,6 +55,7 @@ async function build(isDev = false) {
     /**入口文件格式 */
     const fileFormat = isTypescript ? 'ts' : 'js';
     const tsConfigFile = path.join(rootPath, 'tsconfig.json');
+    console.log(chalk.green('tsConfigFile'), tsConfigFile);
     const hasTsConfig = await fs.exists(tsConfigFile);
     const pkgJson = require(path.join(rootPath, 'package.json'));
     const tsPluginOptions = typescript({
@@ -251,7 +252,7 @@ async function build(isDev = false) {
                         console.log(chalk.green('auto publish to yalc '));
                         runSh(
                             'yalc publish ' + packageDir + ' --update',
-                            null,
+                            {},
                             { cwd: cliDir }
                         );
                         break;
