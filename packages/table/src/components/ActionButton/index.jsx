@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import { ConfigConsumer } from "../../modules/config";
+import { ConfigConsumer } from "../../modules/config/index.jsx";
 import { Can } from "@casl/react";
 import { subject } from "@casl/ability";
 // TODO :后续可以加上其他按钮

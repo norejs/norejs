@@ -2,11 +2,11 @@
 "use strict";
 require("colorful").colorful();
 const program = require("commander");
-
 program
     .command("start")
     .option("--version <version>", "start version")
     .action((options, command) => {
+        console.log("start", options);
         require("./start")(options);
     });
 program

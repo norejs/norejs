@@ -12,6 +12,11 @@ const typescript = require('@rollup/plugin-typescript');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const { terser } = require('rollup-plugin-terser');
 const babelEnv = require('@babel/preset-env');
+const reactPresets = require('@babel/preset-react');
+const postcss = require('rollup-plugin-postcss');
+const rollupPostcssLessLoader = require('rollup-plugin-postcss-webpack-alias-less-loader');
+const alias = require('@rollup/plugin-alias');
+
 let projectConfig = {};
 
 const noreConfig = path.resolve(rootPath, './nore.config.js');
@@ -23,7 +28,12 @@ const { deepMerge: isDeepMerge = true } = projectConfig;
 const mergeMethod = isDeepMerge ? deepMerge : Object.assign;
 const babelConfig = {
     babelHelpers: 'bundled',
-    exclude: ['node_modules/**', '../../node_modules/core-js/**'],
+    extensions: ['.js', '.jsx'],
+    exclude: [
+        'node_modules/**',
+        '../../node_modules/core-js/**',
+        rootPath + '/node_modules/**',
+    ],
     presets: [
         [
             babelEnv,
@@ -33,18 +43,20 @@ const babelConfig = {
                 targets: ['android >= 4.0', 'safari >= 9'],
             },
         ],
+        reactPresets,
     ],
 };
 async function build(isDev = false) {
+    console.log(chalk.green('开始构建'), isDev);
     const pkgName = path.basename(rootPath);
     const outputName = pkgName.toLocaleUpperCase().replace(/\-\_/, '');
     /**是否启用ts */
     const isTypescript = await fs.exists(path.join(rootPath, 'src/index.ts'));
-    console.log(pkgName, isTypescript);
     /**入口文件格式 */
     const fileFormat = isTypescript ? 'ts' : 'js';
     const tsConfigFile = path.join(rootPath, 'tsconfig.json');
     const hasTsConfig = await fs.exists(tsConfigFile);
+    const pkgJson = require(path.join(rootPath, 'package.json'));
     const tsPluginOptions = typescript({
         tsconfig: hasTsConfig ? tsConfigFile : undefined,
         compilerOptions: {
@@ -72,16 +84,51 @@ async function build(isDev = false) {
         input: {
             input: `src/index.${fileFormat}`,
             plugins: [
+                alias({
+                    entries: [
+                        {
+                            find: '@',
+                            replacement: path.resolve(rootPath, 'src'),
+                            // OR place `customResolver` here. See explanation below.
+                        },
+                    ],
+                }),
                 nodeResolve(),
+                postcss({
+                    loaders: [
+                        rollupPostcssLessLoader({
+                            nodeModulePath: path.resolve(
+                                rootPath,
+                                './node_modules'
+                            ),
+                            aliases: {},
+                        }),
+                    ],
+                    use: {
+                        less: { javascriptEnabled: true },
+                    },
+                    config: {},
+                }),
                 commonjs(),
                 filesize(),
                 babel(babelConfig),
                 ...tsPlugins,
             ],
             external: (id) => {
-                const external = ['react'];
+                const external = [
+                    'react',
+                    'reacd-dom',
+                    '@ant-design',
+                    '@babel/runtime',
+                ];
+                const pkgName = id.split('/')[0];
                 const isCoreJs = id.indexOf('core-js') === 0;
-                return external.includes(id) || isCoreJs;
+                return (
+                    external.includes(pkgName) ||
+                    isCoreJs ||
+                    pkgJson?.dependencies?.[pkgName] ||
+                    pkgJson?.peerDependencies?.[pkgName]
+                );
             },
             onwarn: function (warning) {
                 console.warn('warning', warning);
@@ -113,6 +160,15 @@ async function build(isDev = false) {
             input: `src/index.${fileFormat}`,
             plugins: [
                 nodeResolve(),
+                alias({
+                    entries: [
+                        {
+                            find: '@',
+                            replacement: path.resolve(rootPath, 'src'),
+                            // OR place `customResolver` here. See explanation below.
+                        },
+                    ],
+                }),
                 commonjs(),
                 filesize(),
                 babel({
@@ -120,14 +176,25 @@ async function build(isDev = false) {
                     exclude: [
                         'node_modules/**',
                         '../../node_modules/core-js/**',
+                        rootPath + '/node_modules/**',
                         /.*node_modules\/.*/,
                     ],
                 }),
                 ...tsPlugins,
             ],
             external: (id) => {
-                const external = ['react'];
-                return external.includes(id);
+                // 在package 中安装的依赖
+                const external = [
+                    'react',
+                    'react-dom',
+                    '@ant-design',
+                    '@babel/runtime',
+                ];
+                return (
+                    external.includes(id) ||
+                    pkgJson.dependencies[id] ||
+                    pkgJson.peerDependencies[id]
+                );
             },
             onwarn: function (warning) {
                 console.warn('warning', warning);

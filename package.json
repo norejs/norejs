@@ -2,6 +2,7 @@
     "name": "norejs",
     "private": false,
     "scripts": {
+        "postinstall": "lerna bootstrap",
         "test": "lerna run test",
         "start": "lerna run start",
         "build": "lerna run build"

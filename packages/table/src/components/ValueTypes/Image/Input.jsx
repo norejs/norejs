@@ -1,7 +1,7 @@
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import { Upload, message } from "antd";
 import { useCallback, useEffect, useState } from "react";
-import { getBase64, getImageSize } from "common/src/utils/images";
+import { getBase64, getImageSize } from "@/common/utils/images";
 
 export default function UploadComponent({
     name = "",

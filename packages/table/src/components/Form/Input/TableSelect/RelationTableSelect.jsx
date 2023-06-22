@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Select } from "antd";
 
-import useMount from "common/src/hooks/useMount";
+import useMount from "@/common/hooks/useMount";
 import {
     parseTableField,
     getTable,

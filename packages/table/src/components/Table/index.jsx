@@ -12,9 +12,9 @@ import {
 } from "react";
 import { Modal, message, Space, Tag } from "antd";
 import useTable from "./hooks/useTable";
-import useMount from "common/src/hooks/useMount";
+import useMount from "@/common/hooks/useMount";
 import customElement from "../../utils/customElement";
-import transformTree from "common/src/utils/transformTree";
+import transformTree from "@/common/utils/transformTree";
 import ActionButton from "../ActionButton";
 import ValueTypes from "../ValueTypes";
 import ModalForm from "../Form/ModalForm";

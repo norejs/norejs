@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect, useCallback } from "react";
 import { Select, TreeSelect } from "antd";
 
-import useMount from "common/src/hooks/useMount";
+import useMount from "@/common/hooks/useMount";
 import {
     parseTableField,
     getTable,
@@ -11,7 +11,7 @@ import {
     getPrimaryKey,
 } from "../../../../modules/table";
 
-import transformTree from "common/src/utils/transformTree";
+import transformTree from "@/common/utils/transformTree";
 
 const { Option } = Select;
 

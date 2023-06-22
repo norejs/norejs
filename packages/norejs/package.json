@@ -18,8 +18,7 @@
         "url": "git+https://github.com/norejs/norejs.git"
     },
     "scripts": {
-        "test": "echo \"Error: run tests from root\" && exit 1",
-        "prepublish": "rm -rf dist && npm run build"
+        "test": "echo \"Error: run tests from root\" && exit 1"
     },
     "bugs": {
         "url": "https://github.com/norejs/norejs/issues"
