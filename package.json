@@ -1,5 +1,5 @@
 {
-    "name": "norejs",
+    "name": "norejs-root",
     "private": false,
     "scripts": {
         "postinstall": "lerna bootstrap",
