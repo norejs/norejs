@@ -3,7 +3,7 @@
 
 ## @norejs/cli - A Minimalist JS Package Building Tool
 
-If you want to develop a JS package, `nore-cli` can save you from the hassle of configuring `rollup`, `babel`, `eslint`, and more.
+If you want to develop a JS package, `@nore/js` can save you from the hassle of configuring `rollup`, `babel`, `eslint`, and more.
 
 ## Main Features:
 * TypeScript Support
@@ -65,7 +65,7 @@ module.exports = function rollupConfig(config, options) {
 ----
 ## @norejs/cli 极简的 JS package 构建工具
 
-如果你想开发一个 JS package, @nore/cli 可以帮你省去rollup、babel、eslint 等配置的烦恼
+如果你想开发一个 JS package, `@nore/js` 可以帮你省去 `rollup`、`babel`、`eslint` 等配置的烦恼
 ## 主要包含以下功能：
 * 支持 typescript
 * 支持 jsx、tsx
