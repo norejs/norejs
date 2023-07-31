@@ -1,4 +1,12 @@
 # NoreJs
 
 NoreJs is js library used to develop web applications.
-It's WIP and not ready for production.
+
+
+# [@norejs/cli](./packages/cli/README.md) 
+
+
+[@norejs/cli](./packages/cli/README.md)  is available to help you develop js packages.
+
+# Other packages
+WIP
