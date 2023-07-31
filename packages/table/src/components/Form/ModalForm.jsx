@@ -10,14 +10,6 @@ import {
 } from "react";
 import { Modal, Form as AntForm } from "antd";
 
-interface IEditFormProps {
-    Form;
-    onSubmit: Function;
-    formProps?;
-    modalProps?;
-    title?;
-}
-
 export default forwardRef(
     (
         {
@@ -26,10 +18,10 @@ export default forwardRef(
             formProps = {},
             modalProps = {},
             onSubmit = (v) => {},
-        }: IEditFormProps,
+        },
         ref,
     ) => {
-        const formRef = useRef<{ form }>();
+        const formRef = useRef();
         const form = formRef?.current?.form;
         const [visible, setVisible] = useState(false);
         const [isLoading, setIsLoading] = useState(false);

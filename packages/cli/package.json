@@ -46,6 +46,7 @@
     },
     "devDependencies": {
         "chalk": "^4.1.2",
+        "rollup-plugin-resolve-index": "^0.0.4",
         "yalc": "^1.0.0-pre.53"
     }
 }

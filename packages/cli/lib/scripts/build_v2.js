@@ -16,6 +16,7 @@ const reactPresets = require('@babel/preset-react');
 const postcss = require('rollup-plugin-postcss');
 const rollupPostcssLessLoader = require('rollup-plugin-postcss-webpack-alias-less-loader');
 const alias = require('@rollup/plugin-alias');
+const resolveIndex = require("rollup-plugin-resolve-index");
 
 let projectConfig = {};
 
@@ -55,7 +56,6 @@ async function build(isDev = false) {
     /**入口文件格式 */
     const fileFormat = isTypescript ? 'ts' : 'js';
     const tsConfigFile = path.join(rootPath, 'tsconfig.json');
-    console.log(chalk.green('tsConfigFile'), tsConfigFile);
     const hasTsConfig = await fs.exists(tsConfigFile);
     const pkgJson = require(path.join(rootPath, 'package.json'));
     const tsPluginOptions = typescript({
@@ -85,6 +85,7 @@ async function build(isDev = false) {
         input: {
             input: `src/index.${fileFormat}`,
             plugins: [
+                
                 alias({
                     entries: [
                         {
@@ -112,6 +113,9 @@ async function build(isDev = false) {
                 }),
                 commonjs(),
                 filesize(),
+                resolveIndex({
+                    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+                }),
                 babel(babelConfig),
                 ...tsPlugins,
             ],

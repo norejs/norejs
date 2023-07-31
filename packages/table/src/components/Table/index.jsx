@@ -15,9 +15,9 @@ import useTable from "./hooks/useTable";
 import useMount from "@/common/hooks/useMount";
 import customElement from "../../utils/customElement";
 import transformTree from "@/common/utils/transformTree";
-import ActionButton from "../ActionButton";
+import ActionButton from "../ActionButton/index.jsx";
 import ValueTypes from "../ValueTypes";
-import ModalForm from "../Form/ModalForm";
+import ModalForm from "../Form/ModalForm.jsx";
 import ProTable from "@ant-design/pro-table";
 import {
     getTableTreeInfo,
