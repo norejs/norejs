@@ -17,8 +17,14 @@ If you want to develop a JS package, `@nore/js` can save you from the hassle of 
 # Usage
 ## Installation
 ```bash
-npm i @norejs/cli
+npm i @norejs/cli --save-dev
 ```
+
+## install core-js
+```bash
+npm i core-js@3 --save
+```
+
 ## Project Directory
 You need to manually create the following directory structure:
 ```bash
@@ -78,7 +84,12 @@ module.exports = function rollupConfig(config, options) {
 # 使用
 ## 安装
 ```bash
-npm i @norejs/cli
+npm i @norejs/cli --save-dev
+```
+
+## 安装 core-js
+```bash
+npm i core-js@3 --save
 ```
 
 ## 项目目录
