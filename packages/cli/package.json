@@ -1,6 +1,6 @@
 {
     "name": "@norejs/cli",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "nore rollup cli",
     "author": "nore",
     "keywords": [
@@ -41,6 +41,7 @@
         "@rollup/plugin-commonjs": "^21.0.1",
         "@rollup/plugin-node-resolve": "^13.0.6",
         "@rollup/plugin-typescript": "^8.3.2",
+        "chalk": "^4.1.2",
         "colorful": "^2.1.0",
         "commander": "^8.3.0",
         "core-js": "3",
@@ -53,14 +54,11 @@
         "rollup-plugin-filesize": "^9.1.1",
         "rollup-plugin-postcss": "^4.0.2",
         "rollup-plugin-postcss-webpack-alias-less-loader": "^1.0.0",
+        "rollup-plugin-resolve-index": "^0.0.5",
         "rollup-plugin-sass": "^1.2.12",
         "rollup-plugin-terser": "^7.0.2",
         "tslib": "^2.4.0",
-        "typescript": "^4.6.4"
-    },
-    "devDependencies": {
-        "chalk": "^4.1.2",
-        "rollup-plugin-resolve-index": "^0.0.4",
+        "typescript": "^4.6.4",
         "yalc": "^1.0.0-pre.53"
     }
 }

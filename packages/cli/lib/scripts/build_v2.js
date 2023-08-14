@@ -48,7 +48,7 @@ const babelConfig = {
     ],
 };
 async function build(isDev = false) {
-    console.log(chalk.green('开始构建'), isDev);
+    console.log(chalk.green('start build'), isDev);
     const pkgName = path.basename(rootPath);
     const outputName = pkgName.toLocaleUpperCase().replace(/\-\_/, '');
     /**是否启用ts */

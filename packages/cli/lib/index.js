@@ -6,7 +6,6 @@ program
     .command("start")
     .option("--version <version>", "start version")
     .action((options, command) => {
-        console.log("start", options);
         require("./start")(options);
     });
 program
