@@ -26,7 +26,7 @@
     },
     "module": "dist/esm/index.js",
     "dependencies": {
-        "@norejs/cli": "^0.0.2"
+        "@norejs/cli": "latest"
     },
     "devDependencies": {
         "@types/node": "^17.0.38",

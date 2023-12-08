@@ -22,7 +22,7 @@
         "@babel/runtime": "^7.22.3",
         "@casl/ability": "^6.5.0",
         "@casl/react": "^3.1.0",
-        "@norejs/cli": "^0.0.2",
+        "@norejs/cli": "latest",
         "antd": "^4.19.3",
         "axios": "^0.26.1",
         "codemirror": "^6.0.1",
