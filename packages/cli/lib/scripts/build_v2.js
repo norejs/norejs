@@ -85,7 +85,6 @@ async function build(isDev = false) {
         input: {
             input: `src/index.${fileFormat}`,
             plugins: [
-                
                 alias({
                     entries: [
                         {
@@ -95,7 +94,9 @@ async function build(isDev = false) {
                         },
                     ],
                 }),
-                nodeResolve(),
+                nodeResolve({
+                    extensions: ['js', 'tx', 'tsx', 'jsx'],
+                }),
                 postcss({
                     loaders: [
                         rollupPostcssLessLoader({
