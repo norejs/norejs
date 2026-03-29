@@ -1,0 +1,13 @@
+{
+  "name": "@norejs/log",
+  "version": "1.0.1",
+  "description": "Lightweight logging utility for NoreJS",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/norejs/norejs.git",
+    "directory": "packages/log"
+  },
+  "author": "pengzai-dev",
+  "license": "ISC"
+}

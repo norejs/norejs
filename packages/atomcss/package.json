@@ -1,0 +1,13 @@
+{
+  "name": "@norejs/atomcss",
+  "version": "1.0.2",
+  "description": "Atomic CSS utility - number to pixel mapping",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/norejs/norejs.git",
+    "directory": "packages/atomcss"
+  },
+  "author": "pengzai-dev",
+  "license": "ISC"
+}
